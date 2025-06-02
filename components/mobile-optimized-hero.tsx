@@ -1,12 +1,12 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { useMediaQuery } from "@/hooks/use-mobile"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 export default function MobileOptimizedHero() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-  const isMobile = useMediaQuery("(max-width: 768px)")
+  const isMobile = useIsMobile()
 
   useEffect(() => {
     const canvas = canvasRef.current
